@@ -1,0 +1,32 @@
+{
+  "name": "legacyvault",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Secure Digital Legacy Vault",
+  "workspaces": [
+    "packages/*",
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "test": "turbo test",
+    "lint": "turbo lint",
+    "format": "prettier --write .",
+    "db:migrate": "pnpm --filter backend db:migrate",
+    "db:seed": "pnpm --filter backend db:seed",
+    "docker:dev": "docker-compose -f docker-compose.dev.yml up",
+    "docker:prod": "docker-compose -f docker-compose.prod.yml up"
+  },
+  "devDependencies": {
+    "turbo": "^1.10.16",
+    "prettier": "^3.1.0",
+    "eslint": "^8.55.0",
+    "typescript": "^5.3.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  }
+}
